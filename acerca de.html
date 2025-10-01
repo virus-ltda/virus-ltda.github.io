@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Acerca de Virus_LTDA</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-height: 100vh;
+                width: 100vw;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Arial, sans-serif;
+                background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+                color: #fff;
+                position: relative;
+                overflow-x: hidden;
+            }
+            .watermark {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 60vw;
+                max-width: 600px;
+                opacity: 0.08;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                pointer-events: none;
+            }
+            .container {
+                position: relative;
+                z-index: 1;
+                max-width: 700px;
+                width: 100%;
+                margin: 80px auto;
+                background: rgba(20, 30, 40, 0.85);
+                border-radius: 18px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+                padding: 40px 32px;
+                box-sizing: border-box;
+            }
+            h1 {
+                font-size: 2.7em;
+                letter-spacing: 2px;
+                text-align: center;
+                margin-bottom: 24px;
+                background: linear-gradient(90deg, #00c6ff, #0072ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            p {
+                font-size: 1.25em;
+                line-height: 1.7;
+                text-align: center;
+            }
+            @media (max-width: 700px) {
+                .container {
+                    max-width: 100vw;
+                }
+            }
+            @media (max-width: 600px) {
+                .container {
+                    padding: 20px 8px;
+                }
+                h1 {
+                    font-size: 2em;
+                }
+                .watermark {
+                    width: 90vw;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img src="logo.png" alt="Logo Virus_LTDA" class="watermark" />
+        <div class="container">
+            <h1>Acerca de Virus_LTDA</h1>
+            <p>
+                En Virus_LTDA fusionamos tecnología y educación para transformar el aprendizaje digital. Nuestra empresa nació de la pasión por el conocimiento y la innovación, con el objetivo de ofrecer cursos online de alta calidad que impulsen tu crecimiento profesional y personal.<br><br>
+                Creemos que el futuro pertenece a quienes se preparan hoy. Por eso reunimos expertos, herramientas interactivas y contenidos actualizados para que cada curso sea una experiencia única, dinámica y accesible desde cualquier lugar.<br><br>
+                Únete a Virus_LTDA y descubre cómo la tecnología puede abrirte puertas a nuevas oportunidades. Aprende, evoluciona y conquista el mundo digital con nosotros.
+            </p>
+        </div>
+    </body>
+</html>
