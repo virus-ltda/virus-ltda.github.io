@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Virus_Ltda - Cursos online</title>
+    <link rel="icon" type="image/x-icon" href="images/virus_oficial32x32.png" />
+    <meta
+      name="description"
+      content="Plataforma de cursos online con pago único y acceso de por vida. Descubre cursos en Excel, cuidado canino, reparación de lavadoras y más. Aprende a tu ritmo."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1e88e5;
+        --color-primary-dark: #1565c0;
+        --color-accent: #6c63ff;
+        --color-text: #1a1a1a;
+        --color-background: #f6f7fb;
+        --card-bg: #ffffff;
+        --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", system-ui, Arial, sans-serif;
+        color: var(--color-text);
+        background: var(--color-background);
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", "Inter", sans-serif;
+        margin: 0;
+        font-weight: 700;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ======================================= */
+      /* Navegación (Ajustes para Responsividad) */
+      /* ======================================= */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav .logo {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      nav .links {
+        display: flex;
+        gap: 1rem;
+        align-items: center; /* Alineación para escritorio */
+      }
+      nav a {
+        color: var(--color-text);
+        text-decoration: none;
+        margin: 0 0.5rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--color-primary);
+      }
+      /* Botón de menú (solo visible en móviles) */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 200;
+        color: var(--color-text);
+      }
+
+      /* Media Query para Móviles */
+      @media (max-width: 768px) {
+        nav {
+          padding: 1rem;
+          flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        }
+        nav .links {
+          /* Ocultar el menú horizontalmente en móvil por defecto */
+          display: none; 
+          flex-direction: column;
+          width: 100%; /* Ocupa todo el ancho */
+          text-align: center;
+          padding-top: 1rem;
+          border-top: 1px solid #eee; /* Separador */
+        }
+        nav .links.open {
+          display: flex; /* Mostrar cuando la clase 'open' esté activa */
+        }
+        nav a {
+          margin: 0.5rem 0; /* Espaciado vertical en móvil */
+          padding: 0.5rem 0;
+          width: 100%;
+        }
+        .menu-toggle {
+          display: block; /* Mostrar el botón de menú */
+        }
+      }
+      
+      /* ======================================= */
+      /* Contenido principal */
+      /* ======================================= */
+      .main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      @media (max-width: 768px) {
+        .main {
+          padding: 1rem; /* Menos padding en móviles */
+        }
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem; /* Más espacio */
+        padding: 3rem 2rem; /* Más padding */
+        background: linear-gradient(135deg, #eef4ff 0%, #ffffff 60%);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+      .section {
+        padding: 2rem 0;
+        /* Asegúrate de que no haya animación inicial que oculte el contenido */
+      }
+      .section-title {
+        font-size: 1.25rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Grid y tarjetas */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+      @media (max-width: 1024px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+        transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+          box-shadow 0.25s;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+      }
+      .card h3 {
+        font-size: 1.05rem;
+        margin: 0 0 0.5rem;
+      }
+      
+      /* Botones */
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        background: var(--color-primary);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.2s, opacity 0.2s;
+        border: 0;
+        text-align: center; /* Centrar texto del botón */
+      }
+      .btn.secondary {
+        background: #fff;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        font-weight: 700;
+      }
+      .btn:hover {
+        background: var(--color-primary-dark);
+        opacity: 0.9;
+      }
+      .btn.secondary:hover {
+        background: var(--color-background); /* Ligeramente gris */
+      }
+      /* Contenedor de botones en hero (mejora en móvil) */
+      .hero > div {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap; /* Envuelve los botones si no caben */
+      }
+
+      /* Animaciones suaves al hacer scroll (fade-up) */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .section {
+        animation: fadeUp 0.6s ease both;
+      } 
+      
+      /* Footer simple (opcional) */
+      footer {
+        padding: 2rem 1rem;
+        background: #fff;
+        margin-top: 2rem;
+        text-align: center;
+      } 
+      
+      /* Accesibilidad rápida */
+      :focus {
+        outline: 2px solid var(--color-primary-dark);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav role="navigation" aria-label="Menú principal">
+      <div class="logo" aria-label="Logo">Virus_Ltda</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        &#9776;
+      </button> 
+      <div class="links" id="nav-links">
+        <a href="#inicio">Inicio</a> 
+        <a href="acerca de.html">Acerca de</a>
+        <a href="cursos.html">Cursos</a> 
+        <a href="https://wa.link/f4pufv">Contacto</a>
+        <a href="programas.html">Programas</a>
+      </div>
+    </nav>
+    <main class="main" id="inicio">
+      <section class="hero" aria-label="Encabezado principal">
+        <h1 style="font-size: clamp(1.8rem, 2.5vw + 1rem, 2.5rem); margin: 0">
+          Explora cursos online con pago único y acceso de por vida
+        </h1>
+        <p style="font-size: 1rem; color: #555; margin: 0">
+          Aprende a tu ritmo empíricamente con una selección de cursos prácticos. Navega por
+          las tarjetas y selecciona tu curso favorito.
+        </p>
+        <div>
+          <a class="btn" href="cursos.html" aria-label="Ver cursos">Ver cursos</a>
+          <a href="mas_informacion.html" class="btn secondary" aria-label="Más información">Más información</a>
+          <a href="soporte.html" class="btn secondary" aria-label="Soporte para tu PC">Soporte para tu PC</a>
+        </div>
+      </section>
+      <section class="section" id="cursos" aria-labelledby="cursos-titulo">
+        <h2 class="section-title" id="cursos-titulo" style="font-size: 1.5rem">
+          Cursos destacados
+        </h2>
+        <div class="grid">
+          <article class="card" aria-label="Curso 1">
+            <h3>Curso 1: Título existente</h3>
+            <p>
+              Descripción breve del curso existente (no se modifica el texto
+              original).
+            </p>
+            <a class="btn" href="#" aria-label="Abrir curso 1">Empieza ahora</a>
+          </article>
+          <article class="card" aria-label="Curso 2">
+            <h3>Curso 2: Título existente</h3>
+            <p>
+              Descripción breve del curso existente (no se modifica el texto
+              original).
+            </p>
+            <a class="btn" href="#" aria-label="Abrir curso 2">Empieza ahora</a>
+          </article>
+          <article class="card" aria-label="Curso 3">
+            <h3>Curso 3: Título existente</h3>
+            <p>
+              Descripción breve del curso existente (no se modifica el texto
+              original).
+            </p>
+            <a class="btn" href="#" aria-label="Abrir curso 3">Empieza ahora</a>
+          </article>
+          </div>
+      </section>
+      <section class="section" id="acerca" aria-labelledby="acerca-titulo">
+        <h2 class="section-title" id="acerca-titulo" style="font-size: 1.5rem">
+          Acerca de
+        </h2>
+        <p>
+          Contenido existente de la página sobre la plataforma. No se modifican
+          textos ni enlaces.
+        </p>
+      </section>
+    </main>
+    <footer id="contacto" aria-label="Contacto">
+      <p style="margin: 0; font-size: 0.9rem; color: #555">
+        © Virus_Ltda. Todos los derechos reservados.
+      </p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        // Función para alternar la visibilidad del menú
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          navLinks.classList.toggle('open');
+          // Opcional: Cambiar el símbolo de hamburguesa a una 'X' al abrir
+          menuToggle.innerHTML = isExpanded ? '&#9776;' : '&#10005;'; 
+        });
+
+        // Opcional: Cerrar el menú después de hacer clic en un enlace (útil en SPA o si los enlaces son anclas)
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', () => {
+            if (navLinks.classList.contains('open')) {
+              navLinks.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+              menuToggle.innerHTML = '&#9776;';
+            }
+          });
+        });
+
+        // Desactivar el fadeUp inicial para evitar flash de contenido vacío (según tu comentario)
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(sec => sec.style.opacity = '1'); 
+      });
+    </script>
+  </body>
+</html>
