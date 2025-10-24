@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programas - Descargas Esenciales</title>
+    <link rel="icon" type="image/x-icon" href="images/virus_oficial32x32.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Estilos CSS */
+      :root {
+        --color-principal: #3498db; /* Azul vibrante */
+        --color-secundario: #2ecc71; /* Verde (para botones) */
+        --color-fondo: #ecf0f1; /* Gris claro */
+        --color-texto: #2c3e50; /* Gris oscuro */
+      }
+
+      body {
+        font-family: "Roboto", sans-serif; /* Fuente principal */
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--color-principal);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 2.5em;
+      }
+
+      .contenedor {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .lista-programas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        list-style: none;
+        padding: 0;
+      }
+
+      .programa-item {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .programa-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .programa-header {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #eee;
+      }
+
+      .programa-imagen {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .programa-titulo {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: var(--color-principal);
+        margin: 0;
+      }
+
+      .programa-cuerpo {
+        padding: 15px;
+        flex-grow: 1;
+      }
+
+      .programa-descripcion {
+        margin-bottom: 15px;
+        font-size: 1em;
+        color: #555;
+      }
+
+      .programa-enlace {
+        text-align: center;
+        padding: 15px;
+        background-color: var(--color-secundario);
+        border-top: 1px solid #eee;
+        margin-top: auto; /* Empuja el enlace al final del contenedor */
+      }
+
+      .programa-enlace a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .programa-enlace a:hover {
+        background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+      }
+
+      /* Icono de descarga (usando un emoji como alternativa simple) */
+      .icon-descarga::before {
+        content: "⬇️"; /* Emoji de flecha de descarga */
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Programas Esenciales para tu PC</h1>
+      <p>
+        Descarga software útil, seguro y recomendado. ¡Encuentra lo que
+        necesitas!
+      </p>
+    </header>
+
+    <div class="contenedor">
+      <ul class="lista-programas">
+        <li class="programa-item">
+          <div class="programa-header">
+            <img
+              src="https://via.placeholder.com/60/3498db/FFFFFF?text=EDIT"
+              alt="Icono Editor de Texto"
+              class="programa-imagen"
+            />
+            <h2 class="programa-titulo">Editor X Pro</h2>
+          </div>
+          <div class="programa-cuerpo">
+            <p class="programa-descripcion">
+              Un editor de texto avanzado y ligero, perfecto para programadores
+              y escritores. Soporta múltiples lenguajes y temas personalizables.
+            </p>
+          </div>
+          <div class="programa-enlace">
+            <a href="#descargar-editorx" class="icon-descarga"
+              >Descargar Ahora</a
+            >
+          </div>
+        </li>
+
+        <li class="programa-item">
+          <div class="programa-header">
+            <img
+              src="https://via.placeholder.com/60/e74c3c/FFFFFF?text=DSGN"
+              alt="Icono Suite Diseño"
+              class="programa-imagen"
+            />
+            <h2 class="programa-titulo">Creative Studio 2025</h2>
+          </div>
+          <div class="programa-cuerpo">
+            <p class="programa-descripcion">
+              La suite más completa para edición de fotos, ilustración y
+              maquetación. Ideal para profesionales creativos.
+            </p>
+          </div>
+          <div class="programa-enlace">
+            <a href="#descargar-creativestudio" class="icon-descarga"
+              >Descargar Ahora</a
+            >
+          </div>
+        </li>
+
+        <li class="programa-item">
+          <div class="programa-header">
+            <img
+              src="https://via.placeholder.com/60/f39c12/FFFFFF?text=NAV"
+              alt="Icono Navegador Web"
+              class="programa-imagen"
+            />
+            <h2 class="programa-titulo">TurboBrowser</h2>
+          </div>
+          <div class="programa-cuerpo">
+            <p class="programa-descripcion">
+              Un navegador web ultrarrápido centrado en la privacidad y el bajo
+              consumo de recursos. Navega sin interrupciones.
+            </p>
+          </div>
+          <div class="programa-enlace">
+            <a href="#descargar-turbobrowser" class="icon-descarga"
+              >Descargar Ahora</a
+            >
+          </div>
+        </li>
+
+        <li class="programa-item">
+          <div class="programa-header">
+            <img
+              src="https://via.placeholder.com/60/9b59b6/FFFFFF?text=ZIP"
+              alt="Icono Compresor"
+              class="programa-imagen"
+            />
+            <h2 class="programa-titulo">ZipMaster</h2>
+          </div>
+          <div class="programa-cuerpo">
+            <p class="programa-descripcion">
+              Comprime y descomprime archivos en todos los formatos populares.
+              Rápido, seguro y de uso intuitivo.
+            </p>
+          </div>
+          <div class="programa-enlace">
+            <a href="#descargar-zipmaster" class="icon-descarga"
+              >Descargar Ahora</a
+            >
+          </div>
+        </li>
+
+        <li class="programa-item">
+          <div class="programa-header">
+            <img
+              src="https://via.placeholder.com/60/1abc9c/FFFFFF?text=PLAY"
+              alt="Icono Reproductor"
+              class="programa-imagen"
+            />
+            <h2 class="programa-titulo">MediaFlow</h2>
+          </div>
+          <div class="programa-cuerpo">
+            <p class="programa-descripcion">
+              Reproductor capaz de abrir cualquier formato de audio o video sin
+              necesidad de códecs adicionales.
+            </p>
+          </div>
+          <div class="programa-enlace">
+            <a href="#descargar-mediaflow" class="icon-descarga"
+              >Descargar Ahora</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virus_Ltda</title>
+    <link rel="shortcut icon" href="images/virus_oficial32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus.Ltda - Soporte Tecnico Informatico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #343a40 !important;
+        }
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .nav-link {
+            color: #6c757d !important;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+        }
+        .nav-link i {
+            margin-right: 5px;
+        }
+        .header-hero {
+            /* Se mantiene la capa de transparencia y se usa la imagen local images/logovirus.jpeg */
+            background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/logovirus.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Para que el texto de fondo no se desborde */
+        }
+        .header-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .header-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .search-bar .form-control {
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+        }
+        .search-bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            color: #6c757d;
+        }
+        .content-grid {
+            padding: 50px 0;
+        }
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            text-align: left;
+            margin-bottom: 20px;
+            min-height: 180px; /* Para mantener la altura similar */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #007bff; /* Color azul para los iconos */
+            margin-bottom: 15px;
+        }
+        .feature-card h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #343a40;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        .navbar .badge {
+            font-size: 0.7em;
+            padding: 0.35em 0.6em;
+            vertical-align: super;
+        }
+        .navbar .new-request-btn {
+            background-color: #dc3545; /* Rojo */
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 0.9rem;
+        }
+        .navbar .new-request-btn i {
+            margin-right: 5px;
+        }
+        .navbar .user-profile img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-left: 15px;
+            border: 2px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid mx-lg-5">
+            <a class="navbar-brand" href="#">
+                <span style="color:#007bff; font-weight:lighter;"></span> <span style="color:#007bff;">SOPORTE TECNICO INFORMATICO</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-folder"></i> My Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-lightbulb"></i> Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-eye"></i> Observed</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge bg-danger ms-1">32</span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="https://wa.link/f4pufv" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge bg-danger ms-1"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Icono eliminado -->
+                        
+                            
+                    </li>
+                    <li class="nav-item user-profile">
+                       
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header-hero">
+        <div class="container">
+            <h1>bienvenido, como podemos ayudarte hoy?</h1>
+            <div class="search-bar">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Encuentra ayuda, servicios y soluciones">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-grid container mt-5">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h5>IT Support</h5>
+                    <p>Need help with your hardware or software?</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h5>Accounting & Finance</h5>
+                    <p>Have a request related to payment or finance?</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h5>Schedule</h5>
+                    <p>Check the schedule and book a classroom</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h5>Communication</h5>
+                    <p>Have a request related to communications?</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-building"></i>
+                    <h5>Campus Facilities</h5>
+                    <p>Have a request related to campus facilities?</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h5>Human Resources</h5>
+                    <p>Open a ticket with Human Resources</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h5>Training</h5>
+                    <p>Schedule a training session</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="feature-card">
+                    <i class="fas fa-mug-hot"></i>
+                    <h5>Suggestions</h5>
+                    <p>Do you have a suggestion?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
