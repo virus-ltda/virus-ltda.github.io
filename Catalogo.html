@@ -1,0 +1,370 @@
+<!-- Office.html
+    Plantilla de catálogo visual. No puedo acceder automáticamente al enlace externo,
+    así que reemplaza el contenido del arreglo `products` en el script con los
+    productos/servicios reales del catálogo de WhatsApp (https://wa.me/c/573209987843).
+    El botón "Soporte" enlaza a soporte.html con parámetros (id) que puedes ajustar.
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="virus_oficial32x32.png" type="image/png" sizes="32x32" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Catálogo | Virus LTDA</title>
+
+    <!-- Google Fonts y Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --accent:#08b1a6;
+            --muted:#9aa4b2;
+            --glass: rgba(255,255,255,0.03);
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg,#071226 0%, #071b2a 60%), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=60') center/cover fixed;
+            color:#e6eef6;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            min-height:100vh;
+            padding:40px 20px;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:0 auto;
+            backdrop-filter: blur(6px);
+        }
+
+        header{
+            display:flex;
+            gap:16px;
+            align-items:center;
+            margin-bottom:28px;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+        .logo .mark{
+            width:64px;
+            height:64px;
+            border-radius:14px;
+            background:linear-gradient(135deg,var(--accent),#2bd7c8);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            box-shadow:0 6px 18px rgba(8,177,166,0.18), inset 0 -6px 12px rgba(255,255,255,0.06);
+            font-weight:700;
+            color:#032224;
+            font-size:22px;
+        }
+        h1{margin:0; font-size:20px; font-weight:600}
+        p.lead{margin:0; color:var(--muted); font-size:13px}
+
+        .controls{
+            margin-left:auto;
+            display:flex;
+            gap:10px;
+            align-items:center;
+        }
+        .search{
+            position:relative;
+        }
+        .search input{
+            padding:10px 12px 10px 36px;
+            border-radius:10px;
+            border:1px solid rgba(255,255,255,0.06);
+            background:var(--glass);
+            color:inherit;
+            outline:none;
+            width:280px;
+        }
+        .search i{position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--muted)}
+
+        .support-btn{
+            background:linear-gradient(90deg,var(--accent),#2bd7c8);
+            color:#012525;
+            padding:10px 14px;
+            border-radius:10px;
+            display:inline-flex;
+            gap:8px;
+            align-items:center;
+            text-decoration:none;
+            font-weight:600;
+            box-shadow:0 8px 26px rgba(43,215,200,0.12);
+        }
+
+        /* Grid */
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+            gap:18px;
+            margin-top:22px;
+        }
+
+        .card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding:14px;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,0.03);
+            transition:transform .18s ease, box-shadow .18s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .card:hover{transform:translateY(-6px); box-shadow:0 16px 40px rgba(2,6,23,0.6);}
+        .thumb{
+            width:100%;
+            height:160px;
+            border-radius:10px;
+            overflow:hidden;
+            background:#071122;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:12px;
+        }
+        .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+
+        .meta{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px;
+        }
+        .title{font-weight:600; font-size:15px}
+        .price{
+            background:linear-gradient(90deg,#012e28,#084240);
+            padding:8px 12px;
+            border-radius:10px;
+            font-weight:700;
+            color:#9ff7ec;
+            box-shadow:0 6px 18px rgba(3,22,18,0.4);
+        }
+        .desc{color:var(--muted); font-size:13px; margin-top:8px; min-height:36px}
+        .tags{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
+        .tag{font-size:12px; color:#042a27; background:#9ff7ec; padding:6px 8px; border-radius:8px}
+
+        .actions{
+            display:flex;
+            gap:8px;
+            margin-top:12px;
+            align-items:center;
+        }
+        .btn{
+            flex:1;
+            display:inline-flex;
+            gap:8px;
+            align-items:center;
+            justify-content:center;
+            padding:10px 12px;
+            border-radius:10px;
+            text-decoration:none;
+            color:var(--card);
+            font-weight:600;
+            cursor:pointer;
+            border:0;
+        }
+        .btn-contact{
+            background:#ffc857;
+            color:#2b2b2b;
+        }
+        .btn-support{
+            background:transparent;
+            color:var(--accent);
+            border:1px solid rgba(160,255,245,0.08);
+        }
+
+        footer{
+            margin-top:32px;
+            color:var(--muted);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+
+        @media (max-width:520px){
+            .search input{width:160px}
+            .thumb{height:140px}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Virus LTDA" class="logo-img" style="width:64px;height:64px;border-radius:14px;object-fit:cover;" />
+                <div>
+                    <h1>Virus LTDA - Catálogo</h1>
+                    <p class="lead">Productos y servicios · Contacto rápido por WhatsApp</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input id="search" placeholder="Buscar producto o servicio..." />
+                </div>
+
+                <a id="waMain" class="support-btn" href="https://wa.me/c/573209987843" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="grid" id="catalog">
+                <!-- Cards renderizados por JS -->
+            </section>
+        </main>
+
+        <footer>
+            <div>© Virus LTDA</div>
+            <div>
+                <a class="support-btn" href="soporte.html">Soporte</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        /*
+            Reemplaza este arreglo con los productos/servicios EXACTOS del catálogo de WhatsApp.
+            Cada objeto puede tener:
+            - id: identificador único
+            - title: nombre del producto/servicio
+            - price: texto del precio (ej. "$120.000 COP" o "Desde $50.000")
+            - desc: descripción corta
+            - img: URL de imagen (puedes usar imágenes locales ej. 'imgs/prod1.jpg')
+            - tags: array de etiquetas
+        */
+        const products = [
+            {
+                id: "serv-01",
+                title: "Servicio de Soporte Informático",
+                price: "Desde $80.000 COP",
+                desc: "Diagnóstico, reparación y optimización de equipos. Soporte remoto y presencial.",
+                img: "https://images.unsplash.com/photo-1580894908361-1f1b8b1b5f5b?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Soporte","Remoto","Presencial"]
+            },
+            {
+                id: "prod-02",
+                title: "Instalación de CCTV",
+                price: "$350.000 COP",
+                desc: "Kit de cámaras 4x con instalación, configuración y prueba de grabación.",
+                img: "https://images.unsplash.com/photo-1581091012184-7d5b3b0bd4f0?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Seguridad","Instalación"]
+            },
+            {
+                id: "prod-03",
+                title: "Mantenimiento Preventivo",
+                price: "Desde $60.000 COP",
+                desc: "Limpieza, revisión y actualización. Planes por contrato mensual/trimestral.",
+                img: "https://images.unsplash.com/photo-1581091012184-8b6c3ff2b1bd?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Mantenimiento","Contratos"]
+            },
+            {
+                id: "serv-04",
+                title: "Venta de Software Antimalware",
+                price: "$120.000 COP / licencia",
+                desc: "Licencias originales con soporte y actualización anual.",
+                img: "https://images.unsplash.com/photo-1580281657521-0b6c1f7d6a9c?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Software","Seguridad"]
+            },
+            {
+                id: "prod-05",
+                title: "Reparación de Portátiles",
+                price: "Desde $90.000 COP",
+                desc: "Diagnóstico gratuito, reemplazo de piezas y pruebas funcionales.",
+                img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Reparación","Hardware"]
+            },
+            {
+                id: "serv-06",
+                title: "Consultoría IT",
+                price: "A cotizar",
+                desc: "Análisis de infraestructura, propuestas de mejora y presupuesto detallado.",
+                img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=1200&q=60",
+                tags: ["Consultoría","Infraestructura"]
+            }
+        ];
+
+        const catalogEl = document.getElementById('catalog');
+        const searchEl = document.getElementById('search');
+        const waBase = "https://wa.me/573209987843"; // número de contacto directo (opcional)
+
+        function renderProducts(list){
+            catalogEl.innerHTML = '';
+            if(!list.length){
+                catalogEl.innerHTML = '<div style="grid-column:1/-1;color:var(--muted);padding:20px;background:rgba(255,255,255,0.02);border-radius:10px;text-align:center">No se encontraron productos.</div>';
+                return;
+            }
+            list.forEach(p => {
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="thumb">
+                        <img src="${p.img}" alt="${escapeHtml(p.title)}" loading="lazy" />
+                    </div>
+                    <div class="meta">
+                        <div class="title">${escapeHtml(p.title)}</div>
+                        <div class="price">${escapeHtml(p.price)}</div>
+                    </div>
+                    <div class="desc">${escapeHtml(p.desc)}</div>
+                    <div class="tags">${(p.tags||[]).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
+
+                    <div class="actions">
+                        <a class="btn btn-contact" target="_blank" rel="noopener"
+                             href="${buildWhatsAppLink(p)}">
+                             <i class="fa-brands fa-whatsapp"></i> Contactar
+                        </a>
+                        <a class="btn btn-support" href="soporte.html?id=${encodeURIComponent(p.id)}">
+                            <i class="fa fa-headset"></i> Soporte
+                        </a>
+                    </div>
+                `;
+                catalogEl.appendChild(card);
+            });
+        }
+
+        function buildWhatsAppLink(product){
+            // Construye un mensaje prellenado para contacto
+            const msg = `Hola, estoy interesado en "${product.title}" (ID: ${product.id}). Precio: ${product.price}. ¿Me pueden dar más información?`;
+            const base = "https://wa.me/573209987843";
+            return base + "?text=" + encodeURIComponent(msg);
+        }
+
+        function escapeHtml(str){
+            return String(str||'').replace(/[&<>"']/g, function(m){
+                return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+            });
+        }
+
+        // Filtro de búsqueda sencillo
+        searchEl.addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            if(!q) { renderProducts(products); return; }
+            const filtered = products.filter(p =>
+                (p.title + ' ' + (p.desc||'') + ' ' + (p.tags||[]).join(' ')).toLowerCase().includes(q)
+            );
+            renderProducts(filtered);
+        });
+
+        // Render inicial
+        renderProducts(products);
+
+        // Nota: si prefieres cargar desde un JSON externo, reemplaza el arreglo
+        // products y usa fetch('catalog.json').then(...). También puedes leer
+        // imágenes locales (por ejemplo imgs/prod1.jpg) colocándolas en la misma carpeta.
+    </script>
+</body>
+</html>
