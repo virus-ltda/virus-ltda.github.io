@@ -9,17 +9,24 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
-      /* Estilos CSS */
+      /* Estilos CSS (Sin cambios, solo agregamos estilo para los iconos) */
       :root {
-        --color-principal: #3498db; /* Azul vibrante */
-        --color-secundario: #2ecc71; /* Verde (para botones) */
-        --color-fondo: #ecf0f1; /* Gris claro */
-        --color-texto: #2c3e50; /* Gris oscuro */
+        --color-principal: #3498db;
+        --color-secundario: #2ecc71;
+        --color-fondo: #ecf0f1;
+        --color-texto: #2c3e50;
       }
 
       body {
-        font-family: "Roboto", sans-serif; /* Fuente principal */
+        font-family: "Roboto", sans-serif;
         background-color: var(--color-fondo);
         color: var(--color-texto);
         margin: 0;
@@ -79,12 +86,21 @@
         border-bottom: 1px solid #eee;
       }
 
+      /* 🔄 Estilo para el contenedor de la imagen o el icono */
       .programa-imagen {
+        display: flex; /* Asegura que el icono esté centrado */
+        justify-content: center;
+        align-items: center;
         width: 60px;
         height: 60px;
         border-radius: 10px;
-        object-fit: cover;
         margin-right: 15px;
+        /* Estilo base para el icono (se puede personalizar por elemento) */
+        font-size: 2.5em; /* Tamaño del icono de Font Awesome */
+        color: white; /* Color base del icono */
+        background-color: var(
+          --color-principal
+        ); /* Color de fondo del contenedor del icono */
       }
 
       .programa-titulo {
@@ -110,7 +126,7 @@
         padding: 15px;
         background-color: var(--color-secundario);
         border-top: 1px solid #eee;
-        margin-top: auto; /* Empuja el enlace al final del contenedor */
+        margin-top: auto;
       }
 
       .programa-enlace a {
@@ -126,13 +142,30 @@
       }
 
       .programa-enlace a:hover {
-        background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+        background-color: #27ae60;
       }
 
-      /* Icono de descarga (usando un emoji como alternativa simple) */
-      .icon-descarga::before {
-        content: "⬇️"; /* Emoji de flecha de descarga */
-        font-size: 1.2em;
+      /* Estilo para el ícono de descarga (usando SVG/clase auxiliar) */
+      .descarga-svg svg {
+        /* Asegura que el color del icono SVG sea blanco como el texto del enlace */
+        stroke: white;
+      }
+
+      /* 🎨 Estilos específicos para los iconos dentro de programa-imagen (Opcional) */
+      .icon-videopad {
+        background-color: #3498db;
+      }
+      .icon-creative {
+        background-color: #e74c3c;
+      }
+      .icon-browser {
+        background-color: #f39c12;
+      }
+      .icon-zip {
+        background-color: #9b59b6;
+      }
+      .icon-media {
+        background-color: #1abc9c;
       }
     </style>
   </head>
@@ -149,34 +182,67 @@
       <ul class="lista-programas">
         <li class="programa-item">
           <div class="programa-header">
-            <img
-              src="https://via.placeholder.com/60/3498db/FFFFFF?text=EDIT"
-              alt="Icono Editor de Texto"
-              class="programa-imagen"
-            />
-            <h2 class="programa-titulo">Editor X Pro</h2>
+            <div
+              <div
+              class="programa-imagen icon-videopad"
+              title="Icono Editor de Video"
+            >
+              <img
+                src="./images/Programas/icono%20videopad.PNG"
+                alt="Icono Editor de Video"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+            </div>
           </div>
           <div class="programa-cuerpo">
             <p class="programa-descripcion">
-              Un editor de texto avanzado y ligero, perfecto para programadores
-              y escritores. Soporta múltiples lenguajes y temas personalizables.
+              VideoPad es un editor de vídeo para Windows y Mac que permite
+              crear y editar vídeos de aspecto profesional de forma sencilla,
+              ofreciendo funciones como edición de múltiples pistas, efectos de
+              vídeo, transiciones, y herramientas de audio.
             </p>
           </div>
           <div class="programa-enlace">
-            <a href="#descargar-editorx" class="icon-descarga"
-              >Descargar Ahora</a
+            <a
+              href="https://drive.google.com/file/d/18sJa8M3pHiDUNYTpLr1aj8zP4SRgU1RN/view?usp=sharing"
+              class="descarga-svg"
+              aria-label="Descargar VideoPad"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 8px; vertical-align: middle"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Descargar Ahora
+            </a>
           </div>
         </li>
 
         <li class="programa-item">
           <div class="programa-header">
-            <img
-              src="https://via.placeholder.com/60/e74c3c/FFFFFF?text=DSGN"
-              alt="Icono Suite Diseño"
-              class="programa-imagen"
-            />
-            <h2 class="programa-titulo">Creative Studio 2025</h2>
+            <i
+              class="fas fa-palette programa-imagen icon-creative"
+              title="Icono Suite Diseño"
+            ></i>
+            <h2 class="programa-titulo">adobe photoshop cs6 portable full español</h2>
           </div>
           <div class="programa-cuerpo">
             <p class="programa-descripcion">
@@ -185,41 +251,84 @@
             </p>
           </div>
           <div class="programa-enlace">
-            <a href="#descargar-creativestudio" class="icon-descarga"
-              >Descargar Ahora</a
+            <a
+              href="#descargar-creativestudio"
+              class="descarga-svg"
+              aria-label="Descargar Creative Studio 2025"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 8px; vertical-align: middle"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Descargar Ahora
+            </a>
           </div>
         </li>
 
         <li class="programa-item">
           <div class="programa-header">
-            <img
-              src="https://via.placeholder.com/60/f39c12/FFFFFF?text=NAV"
-              alt="Icono Navegador Web"
-              class="programa-imagen"
-            />
-            <h2 class="programa-titulo">TurboBrowser</h2>
+            <i
+              class="fas fa-globe programa-imagen icon-browser"
+              title="Icono Navegador Web"
+            ></i>
+            <h2 class="programa-titulo">Advanced System Optimizer 2025</h2>
           </div>
           <div class="programa-cuerpo">
             <p class="programa-descripcion">
-              Un navegador web ultrarrápido centrado en la privacidad y el bajo
-              consumo de recursos. Navega sin interrupciones.
+              Advanced System Optimizer 2025 es una herramienta para Windows que
+              busca mejorar el rendimiento del sistema y limpiar archivos
+              innecesarios. 
             </p>
           </div>
           <div class="programa-enlace">
-            <a href="#descargar-turbobrowser" class="icon-descarga"
-              >Descargar Ahora</a
+            <a
+              href="#descargar-advanced-system-optimizer"
+              class="descarga-svg"
+              aria-label="Descargar Advanced System Optimizer 2025"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 8px; vertical-align: middle"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Descargar Ahora
+            </a>
           </div>
         </li>
 
         <li class="programa-item">
           <div class="programa-header">
-            <img
-              src="https://via.placeholder.com/60/9b59b6/FFFFFF?text=ZIP"
-              alt="Icono Compresor"
-              class="programa-imagen"
-            />
+            <i
+              class="fas fa-file-archive programa-imagen icon-zip"
+              title="Icono Compresor"
+            ></i>
             <h2 class="programa-titulo">ZipMaster</h2>
           </div>
           <div class="programa-cuerpo">
@@ -229,19 +338,40 @@
             </p>
           </div>
           <div class="programa-enlace">
-            <a href="#descargar-zipmaster" class="icon-descarga"
-              >Descargar Ahora</a
+            <a
+              href="#descargar-zipmaster"
+              class="descarga-svg"
+              aria-label="Descargar ZipMaster"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 8px; vertical-align: middle"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Descargar Ahora
+            </a>
           </div>
         </li>
 
         <li class="programa-item">
           <div class="programa-header">
-            <img
-              src="https://via.placeholder.com/60/1abc9c/FFFFFF?text=PLAY"
-              alt="Icono Reproductor"
-              class="programa-imagen"
-            />
+            <i
+              class="fas fa-play-circle programa-imagen icon-media"
+              title="Icono Reproductor"
+            ></i>
             <h2 class="programa-titulo">MediaFlow</h2>
           </div>
           <div class="programa-cuerpo">
@@ -251,12 +381,36 @@
             </p>
           </div>
           <div class="programa-enlace">
-            <a href="#descargar-mediaflow" class="icon-descarga"
-              >Descargar Ahora</a
+            <a
+              href="#descargar-mediaflow"
+              class="descarga-svg"
+              aria-label="Descargar MediaFlow"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-right: 8px; vertical-align: middle"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Descargar Ahora
+            </a>
           </div>
         </li>
       </ul>
     </div>
   </body>
 </html>
+
+
